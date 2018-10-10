@@ -4,19 +4,20 @@
 
 int main(){
 	printf("Inserting element 3 at the begining of the list\n");
-	struct node *n0  = insert_front(0, 3);
-	print_list(n0);
+	struct node *list  = insert_front(0, 3);
+	print_list(list);
 
 	printf("\nInserting element 2 at the begining of the list\n");
-	struct node *n1  = insert_front(n0, 2);
-	print_list(n1);
+	list = insert_front(list, 2);
+	print_list(list);
 
 	printf("\nInserting element 1 at the begining of the list\n");
-	struct node *n2  = insert_front(n1, 1);
-	print_list(n2);
+	list = insert_front(list, 1);
+	print_list(list);
 
-	printf("free_list(): %p\n", free_list(n2));
-	// print_list(n2); Seg fault, as it should
+	printf("\nfree_list(): %p\n", list = free_list(list));
+	printf("List after being freed:\n");
+	print_list(list);
 
 	return 0;
 }
